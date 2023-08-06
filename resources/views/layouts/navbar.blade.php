@@ -8,9 +8,14 @@
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Get A Quote</a>
         <div class="navbar-nav py-0">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
-
+            @if(\Illuminate\Support\Facades\Auth::user())
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-outline-danger">Logout</button>
+                </form>
+            @else
+                <a href="{{route('login')}}" class="nav-item nav-link active">Login</a>
+            @endif
         </div>
 
     </div>

@@ -25,23 +25,38 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/css/style.css" rel="stylesheet">
+
+    @yield('css')
 </head>
 
 <body>
 <!-- Header Start -->
 <div class="container-fluid">
     <div class="row">
-{{--        <div class="col-lg-3 bg-secondary d-none d-lg-block">--}}
-{{--            <a href=""--}}
-{{--               class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">--}}
-{{--                <h1 class="m-0 display-3 text-primary"></h1>--}}
-{{--            </a>--}}
-{{--        </div>--}}
+
         <div class="col-lg-12">
             <div class="row bg-dark d-none d-lg-flex">
 
             </div>
             @include('layouts.navbar')
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-primary py-5 mb-5">
+    <div class="container py-5">
+        <div class="row align-items-center py-4">
+            <div class="col-md-6 text-center text-md-left">
+                <a class="text-decoration-none" href="{{ route('home') }}">
+                    <h1 class="display-4 mb-4 mb-md-0 text-secondary text-uppercase ">Article</h1>
+                </a>
+            </div>
+            <div class="col-md-6 text-center text-md-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="btn btn-sm btn-outline-light" href="{{ route('home') }}">Home</a>
+                    <i class="fas fa-angle-double-right text-light mx-2"></i>
+                    <a class="btn btn-sm btn-outline-light " href="{{ route('articles.index') }}">Article</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
